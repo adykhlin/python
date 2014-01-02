@@ -52,10 +52,17 @@ def pc_move():
             quit()
         print("So, I move")
         print ("Left:"+amount*" |", amount)
+    elif (amount-1)%4 == 0 and amount>1:
+        amount -= random.randint(1,3)
+        if amount <= 0:
+            print ("I have lost!")
+            quit()
+        print("So, I move")
+        print ("Left:"+amount*" |", amount)
     else:
         small = amount
         small -= 4
-        while small > 5:
+        while small > 4:
             small -= 4
         amount -= (small-1)
         if amount <= 0:
