@@ -83,3 +83,4 @@ def goes_first():
         game()
 print ("Left:"+amount*" |", amount)
 goes_first()
+
