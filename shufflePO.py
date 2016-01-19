@@ -8,7 +8,7 @@ pair_c = input ("How many pairs are there? ")
 try: pair_c = int(pair_c)
 except ValueError: print("Not a digit, please try again"); exit()
 while pair_c < 2:
-    print("Irregular pairs amount");
+    print("Wrong amount of pairs");
     pair_c = int(input ("How many pairs are there? "))
 for item in l:
     s += 1
