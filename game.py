@@ -1,7 +1,7 @@
 #!/usr/local/bin/python3
 # coding=utf-8
-
-import random,time
+from random import randint
+from time import sleep
 
 def sticks_amount():
     '''Let's decide the amount of sticks for a game'''
@@ -25,11 +25,12 @@ def again():
     print("Do you want to play again?")
     if input().lower().startswith('y'):
         amount=sticks_amount()
-        goes_first()
+        print ("Left:"+amount*" |", amount)
+        game()
     else:
         print ("Thanks for playing")
         print()
-        time.sleep(0.5)
+        sleep(0.5)
         quit()
 
 def game():
@@ -58,17 +59,16 @@ def pc_move():
     if amount > 1 and amount < 5:
         amount = 1
         print("So, I move")
-        print ("Left:"+amount*" |", amount)
-    elif amount%4 == 0 and amount > 1:
+        print ("Left: |", amount)
+    elif amount%4 == 0 and amount > 1: 
         amount -= 3
         if amount <= 0:
             print ("I have lost!")
-            #quit()
             again()
         print("So, I move")
         print ("Left:"+amount*" |", amount)
     elif (amount-1)%4 == 0:
-        amount -= random.randint(1,3)
+        amount -= randint(1,3)
         if amount <= 0:
             print ("I have lost!")
             #quit()
@@ -77,7 +77,6 @@ def pc_move():
         print ("Left:"+amount*" |", amount)
     else:
         small = amount
-        small -= 4
         while small > 4:
             small -= 4
         amount -= (small-1)
@@ -89,16 +88,6 @@ def pc_move():
         print ("Left:"+amount*" |", amount)
     game()
     return amount
-        
-def goes_first():
-    '''Random decision for the first move'''
-    r = random.randint(0,1)
-    if r == 0:
-        print ("PC goes first")
-        pc_move()
-    else:
-        print ("Player goes first")
-        game()
 amount=sticks_amount()
 print ("Left:"+amount*" |", amount)
-goes_first()
+game()
