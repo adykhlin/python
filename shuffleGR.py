@@ -26,6 +26,6 @@ while potD:
         pop_b = potB.pop(); random.shuffle (potB)
         pop_c = potC.pop(); random.shuffle (potC)
         pop_d = potD.pop(); random.shuffle (potD)
-        print("Group", str(counter) + ":", str(pop_a), str(pop_b), str(pop_c), str(pop_d))
-        print("")
+        print("Group", str(counter+1) + ":", str(pop_a), str(pop_b), str(pop_c), str(pop_d))
+    print("")
 input("Press <Enter> to exit the app\n")
