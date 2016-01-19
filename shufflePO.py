@@ -21,6 +21,6 @@ while potB:
     for counter in range (1, pair_c+1):
         pop_a = potA.pop(); random.shuffle (potA)
         pop_b = potB.pop(); random.shuffle (potB)
-        print("Pair " + str(counter)+ ": " + str(pop_a) + " - " + str(pop_b))
+        print("Pair",str(counter)+ ":", str(pop_a),"-",str(pop_b)) # print("Pair", str(counter)
 print("")
 input("Press <Enter> to exit the app\n")
